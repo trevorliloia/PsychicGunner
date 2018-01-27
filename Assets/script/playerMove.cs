@@ -12,13 +12,13 @@ public class playerMove : MonoBehaviour {
     public bool stillJumping = false;
 
 
-    float moveSpeed = 6;
+    public float moveSpeed = 6;
     float gravity;
     float jumpVelocity;
-    Vector3 velocity;
+    public Vector3 velocity;
     float velXSmooth;
-    float accelTimeAir = .2f;
-    float accelTimeGround = .1f;
+    public float accelTimeAir = .2f;
+    public float accelTimeGround = .1f;
 
 
     public Vector2 jumpClimb;
