@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyLandBasic : MonoBehaviour
+public class enemyLandBasic : MonoBehaviour, iDamageable
 {
+    [SerializeField] float health;
     [SerializeField] Vector3[] localWayPoints;
     [SerializeField] float speed, movementDelay, delayReset;
     Vector3[] globalWayPoints;
     int currentPoint;
     [SerializeField] enemyShoot shoot;
+    [SerializeField] GameObject deathEffect;
     Quaternion baseRot;
 
     public bool isMoving;
+
+    public bool dieTest;
 
     void Start ()
     {
@@ -30,7 +34,9 @@ public class enemyLandBasic : MonoBehaviour
         if (isMoving)
             SetRotation();
 
-	}
+        if (dieTest)
+            Die();
+    }
 
     void MoveToWayPoint()
     {
@@ -70,6 +76,22 @@ public class enemyLandBasic : MonoBehaviour
         {
             transform.rotation = baseRot;
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+
+        if(health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Instantiate(deathEffect, transform.position, deathEffect.transform.rotation);
+        Destroy(gameObject);
     }
 
     void OnDrawGizmos()
