@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent (typeof(controller2D))]
 public class playerMove : MonoBehaviour {
 
+    public float health = 100;
+    public Image HPBar;
 
     public float jumpHeight = 4.5f;
     public float timeToApex = .3f;
@@ -40,6 +43,7 @@ public class playerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        HPBar.fillAmount = (health / 100);
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         int wallDirX = (controller.collisions.left) ? -1 : 1;
 
