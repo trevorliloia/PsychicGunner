@@ -6,17 +6,18 @@ public class enemyLandBasic : MonoBehaviour
 {
     [SerializeField] Vector3[] localWayPoints;
     [SerializeField] float speed, movementDelay, delayReset;
-    [SerializeField] LayerMask targetMask;
     Vector3[] globalWayPoints;
     int currentPoint;
+    [SerializeField] enemyShoot shoot;
+    Quaternion baseRot;
 
-    bool playerDetected;
-
+    public bool isMoving;
 
     void Start ()
     {
         globalWayPoints = new Vector3[localWayPoints.Length];
         delayReset = movementDelay;
+        baseRot = transform.rotation;
 
         for (int i = 0; i < localWayPoints.Length; ++i)
             globalWayPoints[i] = localWayPoints[i] + transform.position;
@@ -24,8 +25,11 @@ public class enemyLandBasic : MonoBehaviour
 	
 	void Update ()
     {
-        if(!playerDetected)
+        if(!shoot.playerDetected)
             MoveToWayPoint();
+        if (isMoving)
+            SetRotation();
+
 	}
 
     void MoveToWayPoint()
@@ -35,17 +39,38 @@ public class enemyLandBasic : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, globalWayPoints[currentPoint], speed * Time.deltaTime);
 
-            if (transform.position.x >= globalWayPoints[currentPoint].x - .1 && transform.position.x <= globalWayPoints[currentPoint].x + .1 && transform.position.y >= globalWayPoints[currentPoint].y - .1 && transform.position.y <= globalWayPoints[currentPoint].y + .1)
+            if (transform.position.x >= globalWayPoints[currentPoint].x - .5 && transform.position.x <= globalWayPoints[currentPoint].x + .5 && transform.position.y >= globalWayPoints[currentPoint].y - .5 && transform.position.y <= globalWayPoints[currentPoint].y + .5)
             {
                 if (currentPoint + 1 >= localWayPoints.Length)
                     currentPoint = 0;
                 else
                     currentPoint++;
                 movementDelay = delayReset;
+                isMoving = false;               
             }
+            else
+                isMoving = true;
         }
     }
 
+    public float Direction()
+    {
+       return globalWayPoints[currentPoint].x - transform.position.x;
+    }
+
+    void SetRotation()
+    {
+        if (Direction() < 0)
+        {
+            Quaternion rot = new Quaternion();
+            rot.eulerAngles = new Vector3(0, 180, 0);
+            transform.rotation = rot;
+         }
+        else
+        {
+            transform.rotation = baseRot;
+        }
+    }
 
     void OnDrawGizmos()
     {
