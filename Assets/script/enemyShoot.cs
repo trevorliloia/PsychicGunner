@@ -5,9 +5,9 @@ using UnityEngine;
 public class enemyShoot : MonoBehaviour
 {
     public GameObject bullet;
-    public Vector3 spawnLocation;
-    public float fireRate;
-    float fireTimer = 0;
+    public Transform spawnLocation;
+    public float burstRate, reloadRate;
+    float burstTimer, reloadTimer;
     public bool playerDetected;
     float direction;
 
@@ -15,9 +15,11 @@ public class enemyShoot : MonoBehaviour
     Animator anim;
 
     void Start()
-    {
+    { 
         movemement = GetComponent<enemyLandBasic>();
         anim = GetComponentInParent<Animator>();
+        burstTimer = burstRate;
+        reloadTimer = reloadRate;
     }
 
     void Update ()
@@ -31,7 +33,6 @@ public class enemyShoot : MonoBehaviour
         if (other.tag == "Player")
         {
             playerDetected = true;
-            anim.SetBool("Shooting", true);
         }
     }
 
@@ -40,20 +41,33 @@ public class enemyShoot : MonoBehaviour
         if (collision.tag == "Player")
         {
             playerDetected = false;
-            fireTimer = 0;
+            burstTimer = burstRate;
+            reloadTimer = reloadRate;
             anim.SetBool("Shooting", false);
         }
     }
 
+
+
     void Shoot()
     {
-        fireTimer -= Time.deltaTime;
-
-        if(fireTimer <= 0)
+        anim.SetBool("Shooting", true);
+        burstTimer -= Time.deltaTime;
+        if (burstTimer <= 0)
         {
-            Debug.Log("Pew Pew!");
-            //Shoot object pooled projectiles
-            fireTimer = fireRate;
+            anim.SetBool("Reload", true);
+            Reload();
+        }
+    }
+
+    void Reload()
+    {
+        reloadTimer -= Time.deltaTime;
+        if(reloadTimer <= 0)
+        {
+            anim.SetBool("Reload", false);
+            burstTimer = burstRate;
+            reloadTimer = reloadRate;
         }
     }
 }
