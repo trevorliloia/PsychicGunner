@@ -62,10 +62,10 @@ MonoBehaviour:
       type: 2}
     count: 100
     shouldExpand: 0
-  - key: 0
-    prototype: {fileID: 1840305449640286, guid: d7967f76241ff9943a8bf13084027f05,
+  - key: 2
+    prototype: {fileID: 1484013083268714, guid: 023f0f4e5f5c0664c93ba1f1a0a5b9b4,
       type: 2}
-    count: 15
+    count: 10
     shouldExpand: 0
   - key: 0
     prototype: {fileID: 1840305449640286, guid: d7967f76241ff9943a8bf13084027f05,
