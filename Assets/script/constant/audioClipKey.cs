@@ -1,0 +1,10 @@
+﻿public enum audioClipKey {
+    TEST_CLIP_1,
+    TEST_CLIP_2,
+    PLAYER_SHOOT,
+    PLAYER_DEATH,
+    TELEPORT,
+    ENEMY_SHOOT_CLASSIC,
+    ENEMY_SHOOT_LASER,
+    ENEMY_DEATH
+}
