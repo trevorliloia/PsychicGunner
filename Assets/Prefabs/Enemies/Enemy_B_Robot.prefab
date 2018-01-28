@@ -97,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1171670522062058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34, y: 3.48, z: 0}
+  m_LocalPosition: {x: -0.34053463, y: 4.0933766, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 4460226720770906}
@@ -163,7 +163,7 @@ Animator:
   m_GameObject: {fileID: 1171670522062058}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: adb5e1daf3e08e440908f4c9d80cdee8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4954d6e8cbd639347999f4b8d032f173, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   speed: 0.35
   movementDelay: 3
   delayReset: 0
-  shoot: {fileID: 0}
+  shoot: {fileID: 114386525535077910}
   deathEffect: {fileID: 1173987637745556, guid: 32c1b56bf49792f4eaf59048ac6a8d8d,
     type: 2}
   isMoving: 0
@@ -261,7 +261,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4daba80c3b45dd641af4b10606b1d739, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a63e53f3237657b4f97a9c5d39bb014b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
