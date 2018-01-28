@@ -28,7 +28,6 @@ public class Psi : MonoBehaviour {
         box = gameObject.GetComponent<BoxCollider2D>();
         partSys = gameObject.GetComponent<ParticleSystem>();
         vel = player.GetComponent<playerMove>().velocity;
-
     }
 	
 	// Update is called once per frame
