@@ -8,20 +8,29 @@ public class playerShoot : MonoBehaviour {
 
     public float testAngle;
 
-    private Transform gunTransform;
+    public Transform gunTransform;
+    public Animator anim;
 
     private void Awake() {
         gunTransform = transform.Find("Gun");
+
     }
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-        RotateGun();
+        //RotateGun();
+        if(Input.GetMouseButton(0))
+        {
+            anim.SetBool("Shooting", true);
+        }
+        if (Input.GetMouseButtonUp(0))
+            anim.SetBool("Shooting", false);
     }
 
     private void RotateGun() {

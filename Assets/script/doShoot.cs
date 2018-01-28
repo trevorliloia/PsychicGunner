@@ -16,19 +16,18 @@ public class doShoot : MonoBehaviour
     {
 
         bullet[0]= objectPool.sharedInstance.GetPooledObject(pooledObject);
-        if (bullet != null && pooledObject != pooledObjectKey.BULLET_2)
+        if (bullet[0] != null && pooledObject != pooledObjectKey.BULLET_2)
         {
             bullet[0].transform.position = spawnLocation.position;
             bullet[0].transform.rotation = spawnLocation.rotation;
             bullet[0].SetActive(true);
         }
-        else if (bullet != null && pooledObject == pooledObjectKey.BULLET_2)
+        else if (bullet[0] != null && pooledObject == pooledObjectKey.BULLET_2)
         {
             for(int i = 0; i < spreadSpawns.Length - 1; ++i)
             {
 
                 bullet[i] = objectPool.sharedInstance.GetPooledObject(pooledObject);
-
                 bullet[i].transform.position = spreadSpawns[i].position;
                 bullet[i].transform.rotation = spreadSpawns[i].rotation;
                 bullet[i].SetActive(true);

@@ -431,7 +431,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1001 &1199260262
+--- !u!1001 &1294410451
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -470,11 +470,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114082218676772916, guid: 634e24d07d847eb458e2bc97fdcc8a5b,
-        type: 2}
-      propertyPath: HPBar
-      value: 
-      objectReference: {fileID: 1371819207}
     - target: {fileID: 114870156440767918, guid: 634e24d07d847eb458e2bc97fdcc8a5b,
         type: 2}
       propertyPath: psiBar
@@ -485,10 +480,11 @@ Prefab:
       propertyPath: portCool
       value: 
       objectReference: {fileID: 642544722}
-    - target: {fileID: 1042433578462228, guid: 634e24d07d847eb458e2bc97fdcc8a5b, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
+    - target: {fileID: 114082218676772916, guid: 634e24d07d847eb458e2bc97fdcc8a5b,
+        type: 2}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 1371819207}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 634e24d07d847eb458e2bc97fdcc8a5b, type: 2}
   m_IsPrefabParent: 0
@@ -496,7 +492,7 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 1042433578462228, guid: 634e24d07d847eb458e2bc97fdcc8a5b,
     type: 2}
-  m_PrefabInternal: {fileID: 1199260262}
+  m_PrefabInternal: {fileID: 1294410451}
 --- !u!114 &1371819207 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114771451216394464, guid: bc8e7641e922aa74f83446c4b8d925ee,
