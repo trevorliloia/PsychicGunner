@@ -55,5 +55,20 @@ MonoBehaviour:
   - key: 0
     prototype: {fileID: 1840305449640286, guid: d7967f76241ff9943a8bf13084027f05,
       type: 2}
+    count: 100
+    shouldExpand: 0
+  - key: 1
+    prototype: {fileID: 1418963923596202, guid: 4e58d4865495736479bc94a4bc8defd3,
+      type: 2}
+    count: 100
+    shouldExpand: 0
+  - key: 0
+    prototype: {fileID: 1840305449640286, guid: d7967f76241ff9943a8bf13084027f05,
+      type: 2}
+    count: 15
+    shouldExpand: 0
+  - key: 0
+    prototype: {fileID: 1840305449640286, guid: d7967f76241ff9943a8bf13084027f05,
+      type: 2}
     count: 15
     shouldExpand: 0
