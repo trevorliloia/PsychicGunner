@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToPool:
   - key: 0
-    prototype: {fileID: 1746381582807652, guid: 3b91914dbab4ba74b84d63ab2e0674d6,
+    prototype: {fileID: 1746381582807652, guid: a61af7772433f1b47848002560d088dd,
       type: 2}
     count: 10
     shouldExpand: 1
