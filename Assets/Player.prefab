@@ -154,7 +154,7 @@ Animator:
   m_GameObject: {fileID: 1437459358495928}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f182172475bd8804fa3877addc55f749, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8ecdda2534d56c149be7092f7b62b2f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -304,7 +304,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 416817961
+  randomSeed: 730401667
   InitialModule:
     serializedVersion: 3
     enabled: 1
