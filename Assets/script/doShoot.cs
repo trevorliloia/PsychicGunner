@@ -15,8 +15,6 @@ public class doShoot : MonoBehaviour
     public void FireWeapon()
     {
 
-        Debug.Log("Pew Pew");
-
         bullet[0]= objectPool.sharedInstance.GetPooledObject(pooledObject);
         if (bullet != null && pooledObject != pooledObjectKey.BULLET_2)
         {

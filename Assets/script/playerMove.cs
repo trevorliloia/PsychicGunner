@@ -32,13 +32,19 @@ public class playerMove : MonoBehaviour, iDamageable {
     public float timeToUnstick;
 
     public controller2D controller;
+
+    public bool dieTest;
+
+    Animator anim;
 	// Use this for initialization
 	void Start () {
         controller = GetComponent<controller2D>();
+        anim = GetComponentInChildren<Animator>();
 
         gravity = -(2 * jumpHeight) / Mathf.Pow(timeToApex, 2);
         jumpVelocity = Mathf.Abs(gravity) * timeToApex;
         print("Gravity " + gravity + "  Jump Vel " + jumpVelocity);
+
 	}
 	
     public void TakeDamage(float damage)
@@ -47,14 +53,10 @@ public class playerMove : MonoBehaviour, iDamageable {
 
         if(health <= 0)
         {
-            Die();
+            anim.SetBool("Die", true);
         }
     }
 
-    void Die()
-    {
-        //Do death
-    }
 	// Update is called once per frame
 	void Update () {
         HPBar.fillAmount = (health / 100);
@@ -62,12 +64,15 @@ public class playerMove : MonoBehaviour, iDamageable {
         int wallDirX = (controller.collisions.left) ? -1 : 1;
 
         float targetVelocityX = input.x * moveSpeed;
+        anim.SetBool("Running", input.x != 0);
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velXSmooth, (controller.collisions.below) ? accelTimeGround : accelTimeAir);
 
         bool wallSliding = false;
+
         if(controller.collisions.left || controller.collisions.right && !controller.collisions.below && velocity.y < 0)
         {
             wallSliding = true;
+            
             if (velocity.y < -wallSpeedMax)
             { velocity.y = -wallSpeedMax; }
 
@@ -100,10 +105,10 @@ public class playerMove : MonoBehaviour, iDamageable {
         {
             velocity.y *= (1.03f);
         }
+        anim.SetBool("Jumping", velocity.y != 0);
 
-        
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if(wallSliding)
             {
@@ -126,6 +131,8 @@ public class playerMove : MonoBehaviour, iDamageable {
             if (controller.collisions.below)
             velocity.y = jumpVelocity;
         }
+
+        anim.SetBool("WallSlide", wallSliding);
         
 
        

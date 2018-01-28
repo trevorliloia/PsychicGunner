@@ -8,11 +8,12 @@ public class controller2D : raycastController {
     
 
     public CollisionInfo collisions;
-
+    Animator anim;
     public override void Start()
     {
         base.Start();
         collisions.faceDir = 1;
+        anim = GetComponentInChildren<Animator>();
     }
 
     public void Move(Vector3 velocity, bool standingOnPlatform = false)
@@ -23,8 +24,8 @@ public class controller2D : raycastController {
 
         collisions.velocityOld = velocity;
 
-        if(velocity.x != 0)
-        {
+        if (velocity.x != 0)
+        {    
             collisions.faceDir = (int)Mathf.Sign(velocity.x);
         }
 
