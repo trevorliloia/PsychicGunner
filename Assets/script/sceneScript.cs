@@ -19,4 +19,12 @@ public class sceneScript : MonoBehaviour {
     {
         SceneManager.LoadScene(1);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
 }
