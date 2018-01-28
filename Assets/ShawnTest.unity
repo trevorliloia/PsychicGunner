@@ -113,6 +113,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &205727221
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4021802950071556, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021802950071556, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021802950071556, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021802950071556, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021802950071556, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021802950071556, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021802950071556, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021802950071556, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &704374233
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,22 +369,6 @@ Prefab:
     - target: {fileID: 1947142620544636, guid: 9b2b5e6d50064d446bce745be9c121c1, type: 2}
       propertyPath: m_Name
       value: Enemy_R_Robot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927740616337760, guid: 9b2b5e6d50064d446bce745be9c121c1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.236
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927740616337760, guid: 9b2b5e6d50064d446bce745be9c121c1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.113
-      objectReference: {fileID: 0}
-    - target: {fileID: 4891640838945076, guid: 9b2b5e6d50064d446bce745be9c121c1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.875
-      objectReference: {fileID: 0}
-    - target: {fileID: 4891640838945076, guid: 9b2b5e6d50064d446bce745be9c121c1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b2b5e6d50064d446bce745be9c121c1, type: 2}

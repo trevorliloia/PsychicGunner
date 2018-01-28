@@ -67,8 +67,8 @@ MonoBehaviour:
       type: 2}
     count: 10
     shouldExpand: 0
-  - key: 0
-    prototype: {fileID: 1840305449640286, guid: d7967f76241ff9943a8bf13084027f05,
+  - key: 3
+    prototype: {fileID: 1282258308164292, guid: 0ae7bf557ec6e2b4b87ea1c4350d16c7,
       type: 2}
-    count: 15
+    count: 50
     shouldExpand: 0
