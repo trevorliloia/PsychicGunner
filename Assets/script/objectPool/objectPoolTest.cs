@@ -17,7 +17,7 @@ public class objectPoolTest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.A)) {
-            GameObject obj = pool.GetPooledObject(pooledObjectKey.BULLET_CLASSIC);
+            GameObject obj = pool.GetPooledObject(pooledObjectKey.BULLET_1);
             if (obj != null) {
                 obj.SetActive(true);
                 activeObj.Add(obj);
