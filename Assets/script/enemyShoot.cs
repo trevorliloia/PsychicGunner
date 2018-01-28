@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class enemyShoot : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform spawnLocation;
     public float burstRate, reloadRate;
     float burstTimer, reloadTimer;
     public bool playerDetected;
-    float direction;
 
     enemyLandBasic movemement;
     Animator anim;
@@ -46,8 +43,6 @@ public class enemyShoot : MonoBehaviour
             anim.SetBool("Shooting", false);
         }
     }
-
-
 
     void Shoot()
     {

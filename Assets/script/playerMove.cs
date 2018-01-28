@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent (typeof(controller2D))]
-public class playerMove : MonoBehaviour {
+public class playerMove : MonoBehaviour, iDamageable {
 
     public float health = 100;
     public Image HPBar;
@@ -41,6 +41,20 @@ public class playerMove : MonoBehaviour {
         print("Gravity " + gravity + "  Jump Vel " + jumpVelocity);
 	}
 	
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+
+        if(health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        //Do death
+    }
 	// Update is called once per frame
 	void Update () {
         HPBar.fillAmount = (health / 100);
