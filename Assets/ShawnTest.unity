@@ -113,6 +113,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &647093764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 647093765}
+  - component: {fileID: 647093766}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &647093765
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 647093764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &647093766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 647093764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed26394f4dc24648b58ed75122f715a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPool:
+  - key: 0
+    prototype: {fileID: 1840305449640286, guid: d7967f76241ff9943a8bf13084027f05,
+      type: 2}
+    count: 15
+    shouldExpand: 0
 --- !u!1 &704374233
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +365,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114844142424404248, guid: 9b2b5e6d50064d446bce745be9c121c1,
+        type: 2}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 647093766}
+    - target: {fileID: 4891640838945076, guid: 9b2b5e6d50064d446bce745be9c121c1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b2b5e6d50064d446bce745be9c121c1, type: 2}
   m_IsPrefabParent: 0
@@ -334,6 +389,8 @@ GameObject:
   - component: {fileID: 1014016370}
   - component: {fileID: 1014016371}
   - component: {fileID: 1014016374}
+  - component: {fileID: 1014016376}
+  - component: {fileID: 1014016375}
   m_Layer: 8
   m_Name: Quad
   m_TagString: Player
@@ -414,7 +471,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1014016369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.27, y: 1.37, z: -0.00863475}
+  m_LocalPosition: {x: -4.79, y: 1.03, z: -0.00863475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -440,3 +497,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1014016375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014016369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f310ed6292af60f498adb1adef4ef18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  HPBar: {fileID: 0}
+  jumpHeight: 4.5
+  timeToApex: 0.3
+  stillJumping: 0
+  moveSpeed: 6
+  velocity: {x: 0, y: 0, z: 0}
+  accelTimeAir: 0.2
+  accelTimeGround: 0.1
+  jumpClimb: {x: 0, y: 0}
+  jumpOff: {x: 0, y: 0}
+  jumpLeap: {x: 0, y: 0}
+  wallSpeedMax: 2.25
+  wallStick: 0.3
+  timeToUnstick: 0
+  controller: {fileID: 0}
+--- !u!114 &1014016376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014016369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cfee3ecef9b764ab5422e385c20b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalRayCount: 4
+  verticalRayCount: 4
+  maxClimbAngle: 80
+  maxDescendAngle: 80
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  colliderB: {fileID: 0}
