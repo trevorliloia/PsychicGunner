@@ -14,17 +14,18 @@ public class Psi : MonoBehaviour {
     public float portTimer;
 
     public float poofTime;
-    public MeshRenderer render;
+    public SpriteRenderer render;
     public BoxCollider2D box;
     public Vector3 vel;
     public ParticleSystem partSys;
-
-	void Start () {
+    Animator anim;
+    void Start () {
         player = gameObject;
         psiAmt = 100;
         portTimer = 0;
         poofTime = 0;
-        render = gameObject.GetComponent<MeshRenderer>();
+        anim = GetComponentInChildren<Animator>();
+        //render = gameObject.GetComponent<MeshRenderer>();
         box = gameObject.GetComponent<BoxCollider2D>();
         partSys = gameObject.GetComponent<ParticleSystem>();
         vel = player.GetComponent<playerMove>().velocity;
@@ -36,13 +37,12 @@ public class Psi : MonoBehaviour {
         poofTime -= Time.deltaTime;
         if(Input.GetMouseButtonDown(1) && psiAmt >= 20 && portTimer >= 1)
         {
-            partSys.Emit(15);
             player.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+            partSys.Emit(15);
             psiAmt -= 20;
             portTimer = 0;
             poofTime = .2f;
-
-            soundSystem.sharedInstance.Play(audioClipKey.TELEPORT);
+            soundSystem.sharedInstance.Play(audioClipKey.TELEPORT);           
         }
         if(psiAmt <= 100)
         {
@@ -56,6 +56,7 @@ public class Psi : MonoBehaviour {
         {
             vel = Vector3.zero;
             render.enabled = false;
+ 
             box.enabled = false;
             partSys.Emit(2);
         }
