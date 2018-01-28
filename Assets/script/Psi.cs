@@ -41,6 +41,8 @@ public class Psi : MonoBehaviour {
             psiAmt -= 20;
             portTimer = 0;
             poofTime = .2f;
+
+            soundSystem.sharedInstance.Play(audioClipKey.TELEPORT);
         }
         if(psiAmt <= 100)
         {

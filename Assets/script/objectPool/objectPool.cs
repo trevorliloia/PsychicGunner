@@ -39,6 +39,7 @@ public class objectPool : MonoBehaviour {
                 return InstantiateAndPool(pooledObjects[meta.key], meta.prototype);
             }
         }
+        Debug.LogWarning(System.String.Format("Unable to load pooled object {0}, too many active instances", System.Enum.GetName(typeof(pooledObjectKey), key)));
         return null;
     }
 

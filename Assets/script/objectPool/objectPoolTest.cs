@@ -6,24 +6,28 @@ public class objectPoolTest : MonoBehaviour {
     private objectPool pool;
     private int Count = 0;
     private GameObject prevObj;
+    private List<GameObject> activeObj;
 
 	// Use this for initialization
 	void Start () {
         pool = objectPool.sharedInstance;
-        
+        activeObj = new List<GameObject>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        GameObject obj = pool.GetPooledObject(pooledObjectKey.BULLET_1);
-        if (obj != null) {
-            obj.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.A)) {
+            GameObject obj = pool.GetPooledObject(pooledObjectKey.BULLET_CLASSIC);
+            if (obj != null) {
+                obj.SetActive(true);
+                activeObj.Add(obj);
+            }
         }
-
-        if (Count > 5) {
-            prevObj.SetActive(false);
+        
+        if (Input.GetKeyDown(KeyCode.S)) {
+            GameObject obj = activeObj[activeObj.Count - 1];
+            activeObj.RemoveAt(activeObj.Count - 1);
+            obj.SetActive(false);
         }
-        prevObj = obj;
-        Count++;
     }
 }
